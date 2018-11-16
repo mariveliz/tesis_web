@@ -145,7 +145,11 @@ var randNum = function() {
 };
 
 function init_panel_toolbox() {
-  $('.collapse-link').on('click', function() {
+  $('.collapse-link').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    console.log(e);
     var $BOX_PANEL = $(this).closest('.x_panel'),
         $ICON = $(this).find('i'),
         $BOX_CONTENT = $BOX_PANEL.find('.x_content');
@@ -192,7 +196,7 @@ if ($(".progress .progress-bar")[0]) {
 // /Progressbar
 
 function init_switchery() {
-  if ($(".js-switch")[0]) {
+  if(typeof Switchery != "undefined" && $(".js-switch")[0]) {
     var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
     elems.forEach(function(html) {
       var switchery = new Switchery(html, {

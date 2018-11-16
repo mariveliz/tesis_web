@@ -1,0 +1,96 @@
+<div class="">
+<div class="container body">
+<div class="main_container">
+
+  <div ng-include src="'Package/fragment/open.html'"></div>
+  <!-- page content -->
+  <div class="right_col" role="main">
+    <div class="">
+      <div class="page-title">
+        <div class="title_left">
+          <h3>Clientes</h3>
+        </div>
+
+      </div> <!-- page title -->
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Gestionar cliente <small>crear o modificar</small></h2>
+              <ul class="nav navbar-right panel_toolbox">
+                <li>
+                  <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content" ng-controller="formCtrl as frm" >
+              <br />
+              <form id="demo-form2"  data-parsley-validate class="form-horizontal form-label-left">
+
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="name" ng-model="frm.formData.name" required="required" class="form-control col-md-7 col-xs-12">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rut">Rut <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" id="rut" ng-model="frm.formData.rut" required="required" class="form-control col-md-7 col-xs-12">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">E-mail</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="email" id="email" class="form-control col-md-7 col-xs-12" ng-model="frm.formData.email" required="required">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Género</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div id="gender" class="btn-group" >
+                      <label class="btn btn-default" for="female" >
+                        Femenino
+                        <input type="radio" id="female" name="gender" ng-model="frm.formData.gender"  value="1">
+                      </label>
+                      <label class="btn btn-primary" for="male" >
+                        Masculino
+                        <input type="radio" id="male" name="gender" ng-model="frm.formData.gender"  value="2">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                  <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <button class="btn btn-primary" type="button">Cancelar</button>
+                    <button class="btn btn-primary" type="reset">Reiniciar</button>
+                    <button type="button" class="btn btn-success" ng-click="frm.submit(vm)" value="submit">Enviar</button>
+                  </div>
+                </div>
+              </form>
+              <pre>
+                <pre>
+                    {{ frm.formData }}
+                </pre>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- empty -->
+  </div> <!-- right_col -->
+  <!-- /page content -->
+
+<div ng-include src="'Package/fragment/close.html'"></div>
+<script src="build/js/custom.js"></script>
+
+</div>  <!-- main_container -->
+</div> <!-- container body -->
+</div> <!-- empty class -->
